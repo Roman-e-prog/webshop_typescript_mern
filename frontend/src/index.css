@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding:0;
+  font-size:100%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+ul{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+.link{
+  text-decoration: none;
+}
+#whiteLink{
+  color:var(--white)
+}
+#blackLink{
+  color:var(--fontColor)
+}
+.active{
+  background:var(--coffee);
+  color:var(--white);
+}
+.error{
+  color:red;
+  margin-top: 5px;
+}
+:root{
+  --brown: #e4760fec;
+  --coffee: #660000;
+  --gray: #e7e3e3;
+  --darkGray: #ada7a7;
+  --white: rgb(250, 248, 243);
+  --fontColor: rgb(23,23,23);
+}
+
+
