@@ -65,8 +65,8 @@
     "@types/redux-logger": "^3.0.9",
     "@types/styled-components": "^5.1.26"
   },
-  "repository": {
+  "repository":{
     "type": "git",
-    "url": "https://github.com/Roman-e-prog/webshop-dashboard"
+    "url": "https://github.com/Roman-e-prog/webshop_typescript_mern.git"
   }
 }
