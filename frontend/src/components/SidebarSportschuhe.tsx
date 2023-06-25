@@ -30,10 +30,10 @@ const SidebarSportschuhe:React.FC = () => {
       <ProductList>
         {productListSportschuhe.map((item)=>(
           <>
-          <Title key={item.id}>{item.title}</Title>
-            <ProductCategory key={item.id}>
-                {productListSportschuhe[0].content.map((c:string)=>(
-                    <Li key={c}><Link to={{pathname:`/${c.replace(/\s+/g, '')}`}} className="link" id="blackLink" title={c}>{c}</Link></Li>
+          <Title key={item.id+'title'}>{item.title}</Title>
+            <ProductCategory key={item.id+'category'}>
+                {productListSportschuhe[0].content.map((c:string, index)=>(
+                    <Li key={index}><Link to={{pathname:`/${c.replace(/\s+/g, '')}`}} className="link" id="blackLink" title={c}>{c}</Link></Li>
                 ))}
             </ProductCategory>
             </>

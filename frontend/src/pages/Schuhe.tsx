@@ -8,8 +8,11 @@ import { useEffect, useState } from 'react';
 import Spinner from '../components/Spinner';
 import Logo from '../components/Logo';
 import Search from '../components/Search';
+import { Link } from 'react-router-dom';
+import {middle, small} from '../responsive';
 const Container = styled.div`
     width:100%;
+    overflow:hidden;
 `;
 const TitleWrapper = styled.div`
     width:100%;
@@ -31,12 +34,20 @@ const ContentWrapper = styled.div`
     margin: 0 auto;
     display:flex;
     flex-wrap:wrap;
+    ${middle({width:"100%", margin:"5px"})};
 `;
 const FieldWrapper = styled.div`
   width:24%;
   margin:4px;
   display:flex;
   flex-direction:column;
+  ${middle({width:"32%"})};
+  ${small({width:"90%"})};
+  & #showProduct{
+    color:var(--fontColor);
+    width:100%;
+    cursor:pointer;
+}
 `;
 const ImgHolder = styled.div`
     width:100%;
@@ -94,35 +105,39 @@ const Schuhe = () => {
         <ContentWrapper>
           {filteredProduct ? filteredProduct.map((item:any)=>(
             <FieldWrapper key={item._id}>
-              <ImgHolder>
-                <img src={item.image} alt={item.title} title={item.title}/>
-              </ImgHolder>
-              <DescHolder>
-                <h4>{item.title}</h4>
-                <h5>{item.producer}</h5>
-                <span>{item.price} €</span>
-              </DescHolder>
-              <ColorHolder>
-              {item.colors.map((item:any)=>(
-                <Colors key={item} style={{background:item}}></Colors>
-              ))}
-              </ColorHolder>
+              <Link to={`/showProduct/${item._id}`} className="link" id="showProduct" title="Produkt anzeigen">
+                <ImgHolder>
+                  <img src={item.image} alt={item.title} title={item.title}/>
+                </ImgHolder>
+                <DescHolder>
+                  <h4>{item.title}</h4>
+                  <h5>{item.producer}</h5>
+                  <span>{item.price} €</span>
+                </DescHolder>
+                <ColorHolder>
+                {item.colors.map((item:any)=>(
+                  <Colors key={item} style={{background:item}}></Colors>
+                ))}
+                </ColorHolder>
+              </Link>
             </FieldWrapper>
           )) : products.map((item)=>(
             <FieldWrapper key={item._id}>
-              <ImgHolder>
-              <img src={item.image} alt={item.title} title={item.title}/>
-              </ImgHolder>
-              <DescHolder>
-                <h4>{item.title}</h4>
-                <h5>{item.producer}</h5>
-                <span>{item.price} €</span>
-              </DescHolder>
-              <ColorHolder>
-              {item.colors.map((item)=>(
-                <Colors key={item} style={{background:item}}></Colors>
-              ))}
-              </ColorHolder>
+              <Link to={`/showProduct/${item._id}`} className="link" id="showProduct" title="Produkt anzeigen">
+                <ImgHolder>
+                <img src={item.image} alt={item.title} title={item.title}/>
+                </ImgHolder>
+                <DescHolder>
+                  <h4>{item.title}</h4>
+                  <h5>{item.producer}</h5>
+                  <span>{item.price} €</span>
+                </DescHolder>
+                <ColorHolder>
+                {item.colors.map((item)=>(
+                  <Colors key={item} style={{background:item}}></Colors>
+                ))}
+                </ColorHolder>
+              </Link>
             </FieldWrapper>
           ))}
         </ContentWrapper>

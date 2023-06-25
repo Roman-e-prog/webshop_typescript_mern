@@ -62,13 +62,13 @@ export const markenLogo = [
         img:"../img/adidas.jpeg"
     },
     {
-        id:1,
+        id:2,
         name:"Nike",
         titel:"Nike",
         img:"../img/NikeLogo.jpeg"
     },
     {
-        id:1,
+        id:3,
         name:"Puma",
         titel:"Puma",
         img:"../img/PumaLogo.jpeg"
@@ -156,7 +156,7 @@ export const productListSneaker = [
 
 export const productListSportschuhe = [
     {
-        id:1,
+        id:"1",
         title:"Sportschuhe",
         content:["Laufschuhe","Hallenschuhe","Fussballschuhe", "Wanderschuhe"],
     }

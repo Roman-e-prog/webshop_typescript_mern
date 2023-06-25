@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Logo from '../components/Logo';
 import Footer from '../components/Footer';
 import {markenLogo} from '../data';
+import {small} from '../responsive';
 const Container = styled.div`
     width:100%;
     vh:100%;
@@ -13,10 +14,12 @@ const MarkenContainer = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
+  flex-wrap:wrap;
 `;
 const MarkenWrapper = styled.div`
   width:30%;
   margin:0 5px;
+  ${small({width:"100%"})}
   & img{
     width:100%;
     height:50vh;

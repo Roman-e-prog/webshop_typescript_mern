@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { useState } from 'react';
+import {small} from '../responsive';
 const Container = styled.div`
     width:100%;
 `;
@@ -16,6 +17,7 @@ const SearchForm = styled.form`
   display:flex;
   align-items:center;
   width:40%;
+  ${small({width:"100%"})}
 `;
 const SearchInput = styled.input`
   flex:3;
