@@ -1,4 +1,4 @@
-'webshop_typescript_mern
+webshop_typescript_mern
 
 #Project purpose
 This project was built to gain knowledge and experience in using TypeScript with the React and Node.js libraries. Also I practiced to work with an external dashboard.
