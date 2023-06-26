@@ -50,7 +50,7 @@ const Table = styled.table`
 const Transactions = () => {
   const dispatch = useAppDispatch();
   const allCartdata = useAppSelector((state)=>state.cartdata.allCartdata);
- 
+ console.log(allCartdata);
 
 useEffect(()=>{
   dispatch(getAllCartdata())
@@ -65,9 +65,10 @@ const firstIndex = lastIndex - transactionsPerPage;
 const currentTransaction = sorteddata.slice(firstIndex, lastIndex);
 //search
 const [searchValue, setSearchValue] = useState('');
-const filteredTransaction = sorteddata.filter((item)=>{
-  return Object.values(item).join('').toLowerCase().includes(searchValue.toLowerCase())
+const filteredTransaction = sorteddata.filter((item:any)=>{
+  return Object.values(item).join('').toLowerCase().includes(searchValue.toLowerCase()) || Object.values(item.user).join('').toLowerCase().includes(searchValue.toLowerCase())
 }).slice(firstIndex, lastIndex);
+
   return (
     <Container>
       <Search callback={(searchValue:string)=>setSearchValue(searchValue)}/>

@@ -1,7 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import cartService from "./cartService";
-// import User from '../user/userSlice';
 export interface Cartdata{
     _id:string,
     id?:string,

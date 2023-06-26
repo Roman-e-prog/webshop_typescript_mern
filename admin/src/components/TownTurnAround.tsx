@@ -131,7 +131,7 @@ const TownTurnAround = () => {
             {sortedNetto.map((item, index)=>(
               <div key={index}>
                 <h3>{item._id.plz} {item._id.city}</h3>
-                  <span>{item.totalNetto} €</span>
+                  <span>{item.totalNetto.toFixed(2)} €</span>
                 </div>
             ))}
             </FieldWrapper>
