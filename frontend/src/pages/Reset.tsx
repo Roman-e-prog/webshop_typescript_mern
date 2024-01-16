@@ -64,7 +64,7 @@ const onSubmit = (e:React.FormEvent)=>{
         <ToastContainer/>
       <UpdateForm onSubmit={onSubmit}>
         <FormGroup>
-            <label>Bitte hier das neue Passswort angeben. Mindestens sechs Stellen</label>
+            <label>Bitte hier das neue Passwort angeben. Das Passwort sollte mindestens sechs Stellen lang sein</label>
             <input type="password" name="password" id="password" placeholder="passwort" defaultValue={password} onChange={(e)=>setPassword(e.target.value)}/>
         </FormGroup>
         <FormGroup>
